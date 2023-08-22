@@ -1,0 +1,122 @@
+
+            
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CoinFlip | betting game on ThunderCore, play and win TT">
+    <link rel="stylesheet" type="text/css" href="https://dappbuilder.org/css/coinflip.ui.css">
+    <style>
+        body {color: ; background-color: ;} /*body colors*/
+        .hdr {color: ; background-color: ;} /*header colors*/
+        button {color: ; background-color: ;} /*button colors*/
+        button:hover {background-color: ;} /*button on hover*/
+        [type=radio]:checked + img {border-color: ;} /*coin choice color*/
+        .tab button.active {color: ; background-color: ;
+}
+        
+    </style>
+    
+    <title>CoinFlip | betting game on ThunderCore</title>
+
+    <script>
+        var gameMain = '0x3cea7D89D44d5295C6CF29b1632B6F0ef7B58d56'; // game address mainnet
+        var gameTest = ''; // game address testnet
+    </script>
+
+</head>
+
+<body>
+
+<div class="hdr">COINFLIP | Play and win TT</div>
+
+<div class="network small" style="text-align: center"><span id="curnet"><span class="err">Please use DApp browser/extension (e.g. <a target="_blank" href="https://metamask.io">Metamask</a>)</span></span> <span id="myaddr"></span></div>
+    
+<div class="play">
+    <div class="coin">
+        <form id="formStake">
+            
+            <table class="coinarea" align="center">
+                <!-- You can choose coin sides images for your images - just change all the img links in this file for links to your images (sides 1 and 2),
+                don't worry for the sizes - they are adjusted by css but don't use too large pictures as it can make your webpage heavy-->
+                <tr>
+                    <td><label><input type="radio" form="formStake" name="stake" value="1" data-key="https://dappbuilder.org/images/coins/1.png" checked><img id="side1" alt="Side 1" class="side" src="https://dappbuilder.org/images/coins/1.png"></label></td>
+                    <td><span id="res1" style="display: none"><img id="side1flip" class="heads animate-coin" src="https://dappbuilder.org/images/coins/1.png"></span>
+                        <span id="res2" style="display: none"><img id="side2flip" class="tails animate-coin" src="https://dappbuilder.org/images/coins/2.png"></span>
+                        <div id="coin"><img id="featureCoin" alt="Coin" class="defcoin" src="https://dappbuilder.org/images/coins/1.png"></div></td>
+                    <td><label><input type="radio" form="formStake" name="stake" value="2" data-key="https://dappbuilder.org/images/coins/2.png"><img id="side2" alt="Side 2" class="side" src="https://dappbuilder.org/images/coins/2.png"></label></td>
+                </tr>
+            </table>
+
+        </form>
+    </div>
+    
+    <div class="gamemessages">
+        <span class="messages" id="betting" style="display: none">Placing bet...</span>
+        <span class="messages" id="won" style="display: none">You won <span class="msg"></span></span>
+        <span class="messages" id="lose" style="display: none">You lose <span class="msg"></span></span>
+    </div>
+    
+    <div class="prize">
+        <span>You can win:</span> <strong  class="myPrize"></strong> TT
+    </div>
+    
+    <div class="btnamount">
+        <button class="btna" id="btn1">10</button><button class="btna" id="btn2">50</button>
+        <button class="btna" id="btn3">100</button><button class="btna" id="btn4">MAX</button>
+    </div>
+    
+    <div class="amount">
+        <button class="btnb" id="btn8">-</button><input type="number" id="amountStake" value="10" size="2"><button class="btnb" id="btn9">+</button>
+    </div>
+    
+    <div class="btnplay">
+        <button class="btnp gameplay" id="playbtn">PLAY</button>
+    </div>
+    
+</div>
+
+<div class="stats">
+    
+    <h1 style="text-align: center"><span>Game history</span></h1>
+    
+    <div class="tab">
+        <button class="tablinks" name="stat" id="defaultOpen">All bets</button>
+        <button class="tablinks" name="mystat">My bets</button>
+    </div>
+
+    <div id="stat" class="tabcontent">
+        
+        <table><thead><tr><th>#</th><th>Player</th><th colspan="2">Bet</th><th colspan="2">Result</th></tr></thead>
+            <tbody id="allBetsTable"></tbody>
+        </table>
+        
+    </div>
+    
+    <div id="mystat" class="tabcontent">
+        
+        <table><thead><tr><th>#</th><th>Player</th><th colspan="2">Bet</th><th colspan="2">Result</th></tr></thead>
+            <tbody id="myBetsTable"></tbody>
+        </table>
+    </div>
+
+<span id="side1tagspan" style="display: none"><img id="side1tag" class="tag" src="https://dappbuilder.org/images/coins/1.png"></span>
+<span id="side2tagspan" style="display: none"><img id="side2tag" class="tag" src="https://dappbuilder.org/images/coins/2.png"></span>
+    
+</div>
+
+<div class="footer">This DApp is built without coding at DappBuilder.org</div>
+
+<script src='https://dappbuilder.org/js/jquery-3.6.0.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/js/ethers-5.0.umd.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/thundercore/coinflip/js/coinflip.ui.js' type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html> 
+            
+            
+            
+            
+        
